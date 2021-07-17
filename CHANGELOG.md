@@ -1,3 +1,6 @@
+# 1.6
+Target .NET 6.0
+
 # 1.5
 Target .NET 5.0
 
