@@ -1,3 +1,6 @@
+# 1.5
+Target .NET 5.0
+
 # 1.4
 Target .NET Framework 4.8
 
