@@ -1,3 +1,7 @@
+# 1.7
+Target .NET 7.0
+Address warnings during build
+
 # 1.6
 Target .NET 6.0
 
