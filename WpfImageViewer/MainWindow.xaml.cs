@@ -30,7 +30,7 @@ namespace WpfImageViewer
 
     //related to file navigation
     IEnumerable<string> fileList = new List<string>();  //list of files in dir of opened image
-    int currentFileIndex = new int(); //file position # in list of files
+    int currentFileIndex; //file position # in list of files
     string imagePath;
 
     Point center; //center of screen
@@ -38,7 +38,7 @@ namespace WpfImageViewer
 
     //related to image dragging
     Point mousePosition;    //saved mouse position
-    bool captured = false;  //whether or not the mouse is currently captured
+    bool captured;  //whether or not the mouse is currently captured
     Point imagePosition;    //saved image position
     Point currentPosition;  //pointer position for comparison to saved positions
 
@@ -236,7 +236,7 @@ namespace WpfImageViewer
       {
         fileList = Directory
             .EnumerateFiles(directoryName)
-            .Where(f => fileFormats.Any(f.ToLower().EndsWith));
+            .Where(f => fileFormats.Any(f.ToLowerInvariant().EndsWith));
       }
 
       //attempt to sort fileList lexicographically
@@ -248,7 +248,7 @@ namespace WpfImageViewer
     }
 
     /// <summary>
-    /// handles keypresses
+    /// handles key-presses
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
